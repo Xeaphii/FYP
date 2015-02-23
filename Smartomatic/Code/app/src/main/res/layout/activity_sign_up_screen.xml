@@ -52,7 +52,7 @@
             android:drawableLeft="@drawable/password" />
 
         <Button
-            android:id="@+id/btnSingIn"
+            android:id="@+id/btnSingUp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"

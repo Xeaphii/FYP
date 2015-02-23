@@ -4,12 +4,13 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
@@ -29,9 +30,13 @@ public class SignInActivity extends Activity {
     int Version = 0;
     Button Verf;
     String User,Passwd;
+    SharedPreferences prefs ;
+    public static final String MyPREFERENCES = "MyPrefs" ;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        prefs = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
         setContentView(R.layout.activity_sign_in_screen);
         UserName = (TextView) findViewById(R.id.etUserName);
         Password = (TextView) findViewById(R.id.etPass);
@@ -76,11 +81,18 @@ public class SignInActivity extends Activity {
             }
             if (Verification)
             {
-                PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putString("is_initialized ", "1").commit();
-                PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putString("Version ", Integer.toString(Version)).commit();
+                prefs.edit().putString("is_initialized","1").commit();
+                prefs.edit().putString("Version",Integer.toString(Version)).commit();
+                prefs.edit().putString("UserName", User).commit();
+
+                //Toast.makeText(getApplicationContext(), PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString("is_initialized", "0"), Toast.LENGTH_LONG).show();
 
                 Intent i = new Intent(getApplicationContext(),MainActivity.class);
                 startActivity(i);
+            }else
+            {
+                Toast.makeText(getApplicationContext(), "Authentication Failed", Toast.LENGTH_LONG).show();
+
             }
         }
 

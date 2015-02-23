@@ -33,20 +33,21 @@ public final class R {
         public static final int vertical_gradient=0x7f02000f;
     }
     public static final class id {
-        public static final int action_cart=0x7f08000d;
-        public static final int btnSignUp=0x7f08000a;
+        public static final int action_cart=0x7f08000e;
+        public static final int btnSignUp=0x7f08000b;
         public static final int btnSingIn=0x7f080003;
-        public static final int chkState=0x7f080006;
+        public static final int btnSingUp=0x7f080005;
+        public static final int chkState=0x7f080007;
         public static final int etEmail=0x7f080004;
         public static final int etPass=0x7f080002;
         public static final int etUserName=0x7f080001;
-        public static final int gridView1=0x7f080008;
-        public static final int imageView=0x7f08000b;
-        public static final int imageView1=0x7f080005;
-        public static final int listView=0x7f080009;
+        public static final int gridView1=0x7f080009;
+        public static final int imageView=0x7f08000c;
+        public static final int imageView1=0x7f080006;
+        public static final int listView=0x7f08000a;
         public static final int pager=0x7f080000;
-        public static final int textView=0x7f08000c;
-        public static final int textView1=0x7f080007;
+        public static final int textView=0x7f08000d;
+        public static final int textView1=0x7f080008;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;

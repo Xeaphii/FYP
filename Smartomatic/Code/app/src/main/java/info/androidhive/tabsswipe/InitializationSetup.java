@@ -1,9 +1,10 @@
 package info.androidhive.tabsswipe;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -12,11 +13,14 @@ public class InitializationSetup extends Activity implements OnClickListener {
 
     Button btnSignIn;
     Button btnSignUp;
+    SharedPreferences prefs;
+    public static final String MyPREFERENCES = "MyPrefs" ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        prefs = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
         setContentView(R.layout.initialization_setup);
-        String InitStatus = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString("is_initialized", "0");
+        String InitStatus = prefs.getString("is_initialized", "0");
         if (InitStatus.equals("1"))
         {
             Intent GoToMainActivity = new Intent(getApplicationContext(),MainActivity.class);
