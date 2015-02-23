@@ -13,39 +13,61 @@ ADDED from AndroidManifest.xml:2:1
 		INJECTED from AndroidManifest.xml:0:0
 	xmlns:android
 		ADDED from AndroidManifest.xml:2:11
-uses-sdk
+uses-permission#android.permission.INTERNET
 ADDED from AndroidManifest.xml:7:5
+	android:name
+		ADDED from AndroidManifest.xml:7:22
+uses-sdk
+ADDED from AndroidManifest.xml:9:5
 	android:targetSdkVersion
-		ADDED from AndroidManifest.xml:9:9
+		ADDED from AndroidManifest.xml:11:9
 		INJECTED from AndroidManifest.xml:0:0
 		INJECTED from AndroidManifest.xml:0:0
 	android:minSdkVersion
-		ADDED from AndroidManifest.xml:8:9
+		ADDED from AndroidManifest.xml:10:9
 		INJECTED from AndroidManifest.xml:0:0
 		INJECTED from AndroidManifest.xml:0:0
 application
-ADDED from AndroidManifest.xml:11:5
+ADDED from AndroidManifest.xml:13:5
 	android:label
-		ADDED from AndroidManifest.xml:14:9
+		ADDED from AndroidManifest.xml:16:9
 	android:allowBackup
-		ADDED from AndroidManifest.xml:12:9
+		ADDED from AndroidManifest.xml:14:9
 	android:icon
-		ADDED from AndroidManifest.xml:13:9
-	android:theme
 		ADDED from AndroidManifest.xml:15:9
+	android:theme
+		ADDED from AndroidManifest.xml:17:9
 activity#info.androidhive.tabsswipe.MainActivity
-ADDED from AndroidManifest.xml:16:9
+ADDED from AndroidManifest.xml:18:9
 	android:label
-		ADDED from AndroidManifest.xml:18:13
+		ADDED from AndroidManifest.xml:20:13
 	android:name
-		ADDED from AndroidManifest.xml:17:13
+		ADDED from AndroidManifest.xml:19:13
+activity#info.androidhive.tabsswipe.SignInActivity
+ADDED from AndroidManifest.xml:23:9
+	android:label
+		ADDED from AndroidManifest.xml:25:13
+	android:name
+		ADDED from AndroidManifest.xml:24:13
+activity#info.androidhive.tabsswipe.SignUpActivity
+ADDED from AndroidManifest.xml:28:9
+	android:label
+		ADDED from AndroidManifest.xml:30:13
+	android:name
+		ADDED from AndroidManifest.xml:29:13
+activity#info.androidhive.tabsswipe.InitializationSetup
+ADDED from AndroidManifest.xml:33:9
+	android:label
+		ADDED from AndroidManifest.xml:35:13
+	android:name
+		ADDED from AndroidManifest.xml:34:13
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from AndroidManifest.xml:19:13
+ADDED from AndroidManifest.xml:36:13
 action#android.intent.action.MAIN
-ADDED from AndroidManifest.xml:20:17
+ADDED from AndroidManifest.xml:37:17
 	android:name
-		ADDED from AndroidManifest.xml:20:25
+		ADDED from AndroidManifest.xml:37:25
 category#android.intent.category.LAUNCHER
-ADDED from AndroidManifest.xml:22:17
+ADDED from AndroidManifest.xml:39:17
 	android:name
-		ADDED from AndroidManifest.xml:22:27
+		ADDED from AndroidManifest.xml:39:27

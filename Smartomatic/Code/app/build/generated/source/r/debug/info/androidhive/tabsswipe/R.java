@@ -16,31 +16,48 @@ public final class R {
     }
     public static final class drawable {
         public static final int add=0x7f020000;
-        public static final int frame=0x7f020001;
-        public static final int ic_launcher=0x7f020002;
-        public static final int toggle_off=0x7f020003;
-        public static final int toggle_on=0x7f020004;
-        public static final int toggle_selector=0x7f020005;
-        public static final int vertical_gradient=0x7f020006;
+        public static final int balloon_bg=0x7f020001;
+        public static final int button_default_bg=0x7f020002;
+        public static final int edittext_bottom_bg=0x7f020003;
+        public static final int edittext_default_bg=0x7f020004;
+        public static final int edittext_top_bg=0x7f020005;
+        public static final int email=0x7f020006;
+        public static final int frame=0x7f020007;
+        public static final int ic_launcher=0x7f020008;
+        public static final int linearlayout_bg=0x7f020009;
+        public static final int password=0x7f02000a;
+        public static final int toggle_off=0x7f02000b;
+        public static final int toggle_on=0x7f02000c;
+        public static final int toggle_selector=0x7f02000d;
+        public static final int user=0x7f02000e;
+        public static final int vertical_gradient=0x7f02000f;
     }
     public static final class id {
-        public static final int action_cart=0x7f080008;
-        public static final int chkState=0x7f080002;
-        public static final int gridView1=0x7f080004;
-        public static final int imageView=0x7f080006;
-        public static final int imageView1=0x7f080001;
-        public static final int listView=0x7f080005;
+        public static final int action_cart=0x7f08000d;
+        public static final int btnSignUp=0x7f08000a;
+        public static final int btnSingIn=0x7f080003;
+        public static final int chkState=0x7f080006;
+        public static final int etEmail=0x7f080004;
+        public static final int etPass=0x7f080002;
+        public static final int etUserName=0x7f080001;
+        public static final int gridView1=0x7f080008;
+        public static final int imageView=0x7f08000b;
+        public static final int imageView1=0x7f080005;
+        public static final int listView=0x7f080009;
         public static final int pager=0x7f080000;
-        public static final int textView=0x7f080007;
-        public static final int textView1=0x7f080003;
+        public static final int textView=0x7f08000c;
+        public static final int textView1=0x7f080007;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
-        public static final int device_layout=0x7f030001;
-        public static final int fragment_devices=0x7f030002;
-        public static final int fragment_movies=0x7f030003;
-        public static final int fragment_rules=0x7f030004;
-        public static final int rules_row=0x7f030005;
+        public static final int activity_sign_in_screen=0x7f030001;
+        public static final int activity_sign_up_screen=0x7f030002;
+        public static final int device_layout=0x7f030003;
+        public static final int fragment_devices=0x7f030004;
+        public static final int fragment_movies=0x7f030005;
+        public static final int fragment_rules=0x7f030006;
+        public static final int initialization_setup=0x7f030007;
+        public static final int rules_row=0x7f030008;
     }
     public static final class menu {
         public static final int main=0x7f070000;
@@ -63,5 +80,6 @@ public final class R {
         /**  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f060001;
+        public static final int DefaultButtonText=0x7f060002;
     }
 }
