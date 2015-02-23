@@ -5,7 +5,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import info.androidhive.tabsswipe.Devices;
-import info.androidhive.tabsswipe.More;
 import info.androidhive.tabsswipe.Rules;
 
 public class TabsPagerAdapter extends FragmentPagerAdapter {
@@ -24,9 +23,9 @@ public class TabsPagerAdapter extends FragmentPagerAdapter {
 		case 1:
 			// Games fragment activity
 			return new Rules();
-		case 2:
-			// Movies fragment activity
-			return new More();
+//		case 2:
+//			// Movies fragment activity
+//			return new More();
 		}
 
 		return null;
@@ -35,7 +34,7 @@ public class TabsPagerAdapter extends FragmentPagerAdapter {
 	@Override
 	public int getCount() {
 		// get item count - equal to number of tabs
-		return 3;
+		return 2;
 	}
 
 }
