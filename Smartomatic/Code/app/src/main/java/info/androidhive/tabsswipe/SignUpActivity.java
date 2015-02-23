@@ -26,18 +26,20 @@ import java.io.IOException;
 public class SignUpActivity extends Activity {
 
     TextView UserName, Password, Email;
-    Boolean UserNameAvailable = false,Signed= false;
+    Boolean UserNameAvailable = false, Signed = false;
     int Version = 0;
     Button SignUp;
     String User, Passwd, MailAddress;
     SharedPreferences prefs;
-    public static final String MyPREFERENCES = "MyPrefs" ;
-
+    public static final String MyPREFERENCES = "MyPrefs";
+    ConnectionDetector cd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        prefs = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);;
+        cd = new ConnectionDetector(getApplicationContext());
+        prefs = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+        ;
         setContentView(R.layout.activity_sign_up_screen);
         UserName = (TextView) findViewById(R.id.etUserName);
         Password = (TextView) findViewById(R.id.etPass);
@@ -46,11 +48,15 @@ public class SignUpActivity extends Activity {
         SignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                User = UserName.getText().toString();
-                //Passwd = Password.getText().toString();
-                //MailAddress= Email.getText().toString();
-                new CheckUserNameAvailability(SignUpActivity.this).execute();
-                //
+                if (cd.isConnectingToInternet()) {
+                    User = UserName.getText().toString();
+                    //Passwd = Password.getText().toString();
+                    //MailAddress= Email.getText().toString();
+                    new CheckUserNameAvailability(SignUpActivity.this).execute();
+                    //
+                } else {
+                    Toast.makeText(getApplicationContext(), "No Internet Present.", Toast.LENGTH_LONG).show();
+                }
             }
         });
     }
@@ -87,10 +93,14 @@ public class SignUpActivity extends Activity {
                 User = UserName.getText().toString();
                 Passwd = Password.getText().toString();
                 MailAddress = Email.getText().toString();
-                new SignUp(SignUpActivity.this).execute();
+                if (cd.isConnectingToInternet()) {
+                    new SignUp(SignUpActivity.this).execute();
+                } else {
+                    Toast.makeText(getApplicationContext(), "No Internet Present.", Toast.LENGTH_LONG).show();
+                }
 
-            }else{
-                Toast.makeText(getApplicationContext(),"Username already exist. Choose different username",Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(getApplicationContext(), "Username already exist. Choose different username", Toast.LENGTH_LONG).show();
 
             }
         }
@@ -156,14 +166,13 @@ public class SignUpActivity extends Activity {
                 dialog.dismiss();
             }
             if (Signed) {
-                prefs.edit().putString("is_initialized","1").commit();
-                prefs.edit().putString("Version",Integer.toString(Version)).commit();
-                prefs.edit().putString("UserName",User).commit();
-                Intent i = new Intent(getApplicationContext(),MainActivity.class);
+                prefs.edit().putString("is_initialized", "1").commit();
+                prefs.edit().putString("Version", Integer.toString(Version)).commit();
+                prefs.edit().putString("UserName", User).commit();
+                Intent i = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(i);
-            }
-            else{
-                Toast.makeText(getApplicationContext(),"Error occur while Signing up",Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(getApplicationContext(), "Error occur while Signing up", Toast.LENGTH_LONG).show();
             }
         }
 

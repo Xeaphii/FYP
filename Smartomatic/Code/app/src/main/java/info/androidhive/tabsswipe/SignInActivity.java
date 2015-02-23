@@ -32,11 +32,13 @@ public class SignInActivity extends Activity {
     String User,Passwd;
     SharedPreferences prefs ;
     public static final String MyPREFERENCES = "MyPrefs" ;
+    ConnectionDetector cd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         prefs = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+        cd = new ConnectionDetector(getApplicationContext());
         setContentView(R.layout.activity_sign_in_screen);
         UserName = (TextView) findViewById(R.id.etUserName);
         Password = (TextView) findViewById(R.id.etPass);
@@ -45,10 +47,14 @@ public class SignInActivity extends Activity {
         Verf.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                User = UserName.getText().toString();
-                Passwd = Password.getText().toString();
-                new VerifyUserTask(SignInActivity.this).execute();
-                //
+                if (cd.isConnectingToInternet()) {
+                    User = UserName.getText().toString();
+                    Passwd = Password.getText().toString();
+                    new VerifyUserTask(SignInActivity.this).execute();
+                    //
+                }else{
+                    Toast.makeText(getApplicationContext(),"No Internet Present.",Toast.LENGTH_LONG).show();
+                }
             }
         });
     }
