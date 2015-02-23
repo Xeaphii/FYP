@@ -20,6 +20,11 @@ if ($conn->connect_error) {
 
 $sql = "INSERT INTO `USER`( `user_name`, `password`, `version`, `email`) VALUES ('". $UserName."','".$Password."',1,'".$Email."')";
 
+
+if (!file_exists('user/'.md5($UserName))) {
+    mkdir('user/'.md5($UserName), 0777, true);
+}
+
 if ($conn->query($sql) === TRUE) {
     echo "Success";
 } else {

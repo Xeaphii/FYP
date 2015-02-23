@@ -15,13 +15,14 @@ import info.androidhive.tabsswipe.R;
 
 public class DeviceAdapter extends BaseAdapter{
 
-    String [] result;
+    String [] Names;
+    String [] Values;
     Context context;
     int [] imageId;
     private static LayoutInflater inflater=null;
     public DeviceAdapter(Context mainActivity, String[] prgmNameList, int[] prgmImages) {
         // TODO Auto-generated constructor stub
-        result=prgmNameList;
+        Names=prgmNameList;
         context=mainActivity;
         imageId=prgmImages;
         inflater = ( LayoutInflater )context.
@@ -32,7 +33,7 @@ public class DeviceAdapter extends BaseAdapter{
     @Override
     public int getCount() {
         // TODO Auto-generated method stub
-        return result.length;
+        return Names.length;
     }
 
     @Override
@@ -71,7 +72,7 @@ public class DeviceAdapter extends BaseAdapter{
             holder.img.getLayoutParams().width = 170;
 
         }else {
-            holder.tv.setText(result[position]);
+            holder.tv.setText(Names[position]);
             holder.img.setImageResource(imageId[position]);
         }
         rowView.setOnClickListener(new OnClickListener() {
@@ -79,7 +80,7 @@ public class DeviceAdapter extends BaseAdapter{
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                Toast.makeText(context, "You Clicked "+result[position], Toast.LENGTH_LONG).show();
+                Toast.makeText(context, "You Clicked "+Names[position], Toast.LENGTH_LONG).show();
             }
         });
 
