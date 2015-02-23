@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="160dp"
+    android:layout_height="160dp"
+    android:background="#222222"
+    android:layout_margin="2dp"
+    android:padding="2dp">
+
+
+    <ImageView
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_centerInParent="true"
+        android:background="#111111" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_gravity="center"
+        android:layout_width="150dp"
+        android:scaleType="fitXY"
+        android:layout_centerInParent="true"
+        android:layout_height="150dp"
+
+        android:src="@drawable/ic_launcher" />
+
+    <ImageView
+        android:layout_gravity="center"
+        android:layout_width="150dp"
+        android:layout_centerInParent="true"
+
+        android:layout_height="150dp"
+        android:src="@drawable/vertical_gradient" />
+
+    <ToggleButton
+        android:id="@+id/chkState"
+        android:layout_width="85dp"
+        android:layout_height="40dp"
+        android:background="@drawable/toggle_selector"
+        android:textOff=""
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="7dp"
+        android:layout_centerHorizontal="true"
+        android:textOn="" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:text="TextView"
+        android:layout_alignParentTop="true"
+        android:textColor="#fff"
+        android:layout_centerHorizontal="true"
+        android:textSize="16dp"
+        android:layout_marginTop="1dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

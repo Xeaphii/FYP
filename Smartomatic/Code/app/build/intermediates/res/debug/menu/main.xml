@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/action_cart"
+        android:icon="@android:drawable/stat_notify_sync_noanim"
+        android:orderInCategory="100"
+        android:showAsAction="always"/>
+
+</menu>
+<!-- From: file:/C:/Users/Sunny/Downloads/Video/Android/Assign/Intents/Intents/SourceFiles/TabsWithSwipeGesture/app/src/main/res/menu/main.xml -->

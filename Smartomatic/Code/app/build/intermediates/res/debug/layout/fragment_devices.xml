@@ -1,0 +1,21 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#222222"
+    tools:context=".MainActivity" >
+
+    <GridView
+        android:id="@+id/gridView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView1"
+        android:numColumns="2" >
+
+    </GridView>
+
+
+
+</RelativeLayout><!-- From: file:/C:/Users/Sunny/Downloads/Video/Android/Assign/Intents/Intents/SourceFiles/TabsWithSwipeGesture/app/src/main/res/layout/fragment_devices.xml -->
