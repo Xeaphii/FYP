@@ -161,8 +161,9 @@ public class Devices extends Fragment {
             } else {
                 String[] NamesArray = Names.toArray(new String[Names.size()]);
                 String[] ImagsArray = ImageLocs.toArray(new String[ImageLocs.size()]);
-
-                gv.setAdapter(new DeviceAdapter(getActivity(), NamesArray, ImagsArray));
+                String[] KeysArray = Keys.toArray(new String[Keys.size()]);
+                String[] ValuessArray = Values.toArray(new String[Values.size()]);
+                gv.setAdapter(new DeviceAdapter(getActivity(), NamesArray, ImagsArray,ValuessArray,KeysArray));
 
             }
         }
@@ -178,6 +179,7 @@ public class Devices extends Fragment {
                     Names.add(Devices[i].split(",")[2].split(":")[1]);
                     Values.add(Devices[i].split(",")[1].split(":")[1]);
                     ImageLocs.add(Devices[i].split(",")[3].split(":")[1]);
+                    Keys.add(Devices[i].split(",")[0].split(":")[1]);
                     String url = "http://xeamphiil.co.nf/user/"+MD5("")+"/"+Devices[i].split(",")[3].split(":")[1];
                     DownloadImage(Devices[i].split(",")[3].split(":")[1],url);
                 }
