@@ -167,7 +167,7 @@ public class SignUpActivity extends Activity {
             }
             if (Signed) {
                 prefs.edit().putString("is_initialized", "1").commit();
-                prefs.edit().putString("Version", Integer.toString(Version)).commit();
+                prefs.edit().putString("Version", Integer.toString(/*Version*/0)).commit();
                 prefs.edit().putString("UserName", User).commit();
                 Intent i = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(i);

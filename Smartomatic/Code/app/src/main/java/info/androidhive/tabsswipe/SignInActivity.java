@@ -88,7 +88,7 @@ public class SignInActivity extends Activity {
             if (Verification)
             {
                 prefs.edit().putString("is_initialized","1").commit();
-                prefs.edit().putString("Version",Integer.toString(Version)).commit();
+                prefs.edit().putString("Version",Integer.toString(/*Version*/0)).commit();
                 prefs.edit().putString("UserName", User).commit();
 
                 //Toast.makeText(getApplicationContext(), PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString("is_initialized", "0"), Toast.LENGTH_LONG).show();

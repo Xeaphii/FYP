@@ -1,6 +1,9 @@
 package info.androidhive.tabsswipe.adapter;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.Environment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -11,6 +14,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
+import java.io.File;
+
 import info.androidhive.tabsswipe.R;
 
 public class DeviceAdapter extends BaseAdapter{
@@ -18,13 +23,13 @@ public class DeviceAdapter extends BaseAdapter{
     String [] Names;
     String [] Values;
     Context context;
-    int [] imageId;
+    String [] imageId;
     private static LayoutInflater inflater=null;
-    public DeviceAdapter(Context mainActivity, String[] prgmNameList, int[] prgmImages) {
+    public DeviceAdapter(Context mainActivity, String[] prgmNameList, String[] ImageLoc) {
         // TODO Auto-generated constructor stub
         Names=prgmNameList;
         context=mainActivity;
-        imageId=prgmImages;
+        imageId=ImageLoc;
         inflater = ( LayoutInflater )context.
                 getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
@@ -73,7 +78,19 @@ public class DeviceAdapter extends BaseAdapter{
 
         }else {
             holder.tv.setText(Names[position]);
-            holder.img.setImageResource(imageId[position]);
+           // File imgFile = new  File(imageId[position]);
+            String path = Environment.getExternalStorageDirectory().toString();
+            File imgFile = new File(path, "Smartomatic" + imageId[position]);
+
+            if(imgFile.exists()){
+
+                Bitmap myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
+
+                holder.img.setImageBitmap(myBitmap);
+
+
+            }
+
         }
         rowView.setOnClickListener(new OnClickListener() {
 
