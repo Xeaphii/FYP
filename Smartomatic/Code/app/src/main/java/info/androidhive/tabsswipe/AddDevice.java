@@ -61,7 +61,8 @@ public class AddDevice extends Activity {
         Configure.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                
+                Intent i = new Intent(getApplicationContext(),Configure.class);
+                startActivity(i);
             }
         });
 
