@@ -393,4 +393,6 @@ public class Devices extends Fragment {
         return null;
     }
 
+
+
 }
