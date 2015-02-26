@@ -98,11 +98,6 @@ public class DeviceAdapter extends BaseAdapter{
             holder.tb.setVisibility(View.GONE);
             holder.img.setImageResource(R.drawable.add);
             holder.img.getLayoutParams().height = 170;
-            holder.img.getLayoutParams().width = 170;
-
-        }else {
-            holder.tv.setText(Names[position]);
-           // File imgFile = new  File(imageId[position]);
             String path = Environment.getExternalStorageDirectory().toString();
             File imgFile = new File(path, "Smartomatic" + imageId[position]);
             holder.tb.setOnClickListener(new OnClickListener() {

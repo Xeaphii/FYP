@@ -71,10 +71,13 @@ public class Devices extends Fragment {
         cd = new ConnectionDetector(getActivity());
         UserName = prefs.getString("UserName", "");
         Version = prefs.getString("Version", "");
+        DevicesStore = prefs.getString("DevicesStore", "");
         gv = (GridView) rootView.findViewById(R.id.gridView1);
 
         if (cd.isConnectingToInternet()) {
             new CheckVersion(getActivity()).execute("");
+        }else{
+            new SetItems().execute("");
         }
         return rootView;
     }
@@ -375,6 +378,7 @@ public class Devices extends Fragment {
         }
     }
 
+
     public String MD5(String md5) {
         try {
             java.security.MessageDigest md = java.security.MessageDigest.getInstance("MD5");
@@ -388,4 +392,5 @@ public class Devices extends Fragment {
         }
         return null;
     }
+
 }
